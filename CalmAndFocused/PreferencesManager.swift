@@ -33,7 +33,7 @@ final class PreferencesManager: ObservableObject {
 
         themeID = ThemeID(rawValue: ud.string(forKey: "themeID") ?? "") ?? .wood
         showInDock = ud.bool(forKey: "showInDock")
-        launchAtLogin = (try? SMAppService.mainApp.status == .enabled) ?? false
+        launchAtLogin = SMAppService.mainApp.status == .enabled
     }
 
     // MARK: - Sound management

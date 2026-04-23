@@ -8,12 +8,15 @@ final class SoundEngine: ObservableObject {
     private var buffers: [String: AVAudioPCMBuffer] = [:]
     private var pendingActive: Set<String> = []
 
-    private static let sampleRate: Double = 44100
-    private static let bufferSeconds: Double = 20.0
-    private static let volumeCeiling: Float = 0.42
+    // Pulled out of the @MainActor class so nonisolated static methods can access them freely
+    fileprivate enum K {
+        static let sampleRate: Double = 44100
+        static let bufferSeconds: Double = 20.0
+        static let volumeCeiling: Float = 0.42
+    }
 
     init() {
-        let format = AVAudioFormat(standardFormatWithSampleRate: Self.sampleRate, channels: 2)!
+        let format = AVAudioFormat(standardFormatWithSampleRate: K.sampleRate, channels: 2)!
         for track in SoundTrack.library {
             let player = AVAudioPlayerNode()
             engine.attach(player)
@@ -51,7 +54,7 @@ final class SoundEngine: ObservableObject {
     }
 
     func setVolume(_ volume: Double, for id: String) {
-        players[id]?.volume = Float(volume) * Self.volumeCeiling
+        players[id]?.volume = Float(volume) * K.volumeCeiling
     }
 
     private func scheduleLoop(id: String) {
@@ -62,8 +65,8 @@ final class SoundEngine: ObservableObject {
 
     // MARK: - Buffer generation (runs off main thread)
 
-    private static func buildBuffers() -> [String: AVAudioPCMBuffer] {
-        let format = AVAudioFormat(standardFormatWithSampleRate: sampleRate, channels: 2)!
+    nonisolated private static func buildBuffers() -> [String: AVAudioPCMBuffer] {
+        let format = AVAudioFormat(standardFormatWithSampleRate: K.sampleRate, channels: 2)!
         var result: [String: AVAudioPCMBuffer] = [:]
         for track in SoundTrack.library {
             result[track.id] = makeBuffer(type: track.type, format: format)
@@ -71,8 +74,8 @@ final class SoundEngine: ObservableObject {
         return result
     }
 
-    private static func makeBuffer(type: SoundTrack.SoundType, format: AVAudioFormat) -> AVAudioPCMBuffer {
-        let frameCount = AVAudioFrameCount(sampleRate * bufferSeconds)
+    nonisolated private static func makeBuffer(type: SoundTrack.SoundType, format: AVAudioFormat) -> AVAudioPCMBuffer {
+        let frameCount = AVAudioFrameCount(K.sampleRate * K.bufferSeconds)
         let buf = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: frameCount)!
         buf.frameLength = frameCount
         let L = buf.floatChannelData![0]
@@ -92,20 +95,20 @@ final class SoundEngine: ObservableObject {
 
     // MARK: Synthesis
 
-    private static func fillWhiteNoise(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
+    nonisolated private static func fillWhiteNoise(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
         for i in 0..<n {
             L[i] = Float.random(in: -0.12...0.12)
             R[i] = Float.random(in: -0.12...0.12)
         }
     }
 
-    private static func fillRain(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
+    nonisolated private static func fillRain(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
         // Pink noise base via Paul Kellet's method + slow intensity LFO + short reverb tail
         var b0L: Float = 0, b1L: Float = 0, b2L: Float = 0, b3L: Float = 0, b4L: Float = 0, b5L: Float = 0, b6L: Float = 0
         var b0R: Float = 0, b1R: Float = 0, b2R: Float = 0, b3R: Float = 0, b4R: Float = 0, b5R: Float = 0, b6R: Float = 0
 
         // Short reverb delay line (50 ms) to add "surface" character
-        let delayLen = Int(sampleRate * 0.05)
+        let delayLen = Int(K.sampleRate * 0.05)
         var dL = [Float](repeating: 0, count: delayLen)
         var dR = [Float](repeating: 0, count: delayLen)
         var dIdx = 0
@@ -113,7 +116,7 @@ final class SoundEngine: ObservableObject {
         let lfoPhase = Float.random(in: 0...(.pi * 2))
 
         for i in 0..<n {
-            let t = Float(i) / Float(sampleRate)
+            let t = Float(i) / Float(K.sampleRate)
             let lfo = 0.68 + 0.32 * sin(2 * .pi * 0.18 * t + lfoPhase)
 
             let wL = Float.random(in: -1...1)
@@ -147,7 +150,7 @@ final class SoundEngine: ObservableObject {
         }
     }
 
-    private static func fillVinyl(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
+    nonisolated private static func fillVinyl(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
         var prevInL: Float = 0, prevOutL: Float = 0
         var prevInR: Float = 0, prevOutR: Float = 0
         let alpha: Float = 0.92
@@ -166,7 +169,7 @@ final class SoundEngine: ObservableObject {
         }
     }
 
-    private static func fillBrownNoise(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
+    nonisolated private static func fillBrownNoise(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
         var runL: Float = 0, runR: Float = 0
         for i in 0..<n {
             runL = (runL + Float.random(in: -1...1)).clamped(to: -16...16)
@@ -176,13 +179,13 @@ final class SoundEngine: ObservableObject {
         }
     }
 
-    private static func fillOcean(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
+    nonisolated private static func fillOcean(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
         var lpL: Float = 0, lpR: Float = 0
         let lp: Float = 0.005
         let phase = Float.random(in: 0...(.pi * 2))
 
         for i in 0..<n {
-            let t = Float(i) / Float(sampleRate)
+            let t = Float(i) / Float(K.sampleRate)
             // Slow wave swell (0.08 Hz ≈ 12 s per wave) + texture modulation
             let swell   = 0.5 + 0.5 * sin(2 * .pi * 0.08 * t + phase)
             let texture = 0.75 + 0.25 * sin(2 * .pi * 0.35 * t + 1.1)
@@ -195,7 +198,7 @@ final class SoundEngine: ObservableObject {
         }
     }
 
-    private static func fillWind(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
+    nonisolated private static func fillWind(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
         // Two-stage lowpass → subtract → bandpass character around 300–900 Hz
         var lp1L: Float = 0, lp2L: Float = 0
         var lp1R: Float = 0, lp2R: Float = 0
@@ -203,7 +206,7 @@ final class SoundEngine: ObservableObject {
         let phase = Float.random(in: 0...(.pi * 2))
 
         for i in 0..<n {
-            let t = Float(i) / Float(sampleRate)
+            let t = Float(i) / Float(K.sampleRate)
             let lfo = Float(0.55 + 0.45 * sin(2 * .pi * 0.22 * t + phase))
 
             let wL = Float.random(in: -1...1)
@@ -216,13 +219,13 @@ final class SoundEngine: ObservableObject {
         }
     }
 
-    private static func fillFireplace(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
+    nonisolated private static func fillFireplace(L: UnsafeMutablePointer<Float>, R: UnsafeMutablePointer<Float>, n: Int) {
         var lpL: Float = 0, lpR: Float = 0
         let lp: Float = 0.018
         let phase = Float.random(in: 0...(.pi * 2))
 
         for i in 0..<n {
-            let t = Float(i) / Float(sampleRate)
+            let t = Float(i) / Float(K.sampleRate)
             let flicker = Float(0.5 + 0.5 * sin(2 * .pi * 0.45 * t + phase))
                         * Float(0.75 + 0.25 * sin(2 * .pi * 1.1 * t))
 
