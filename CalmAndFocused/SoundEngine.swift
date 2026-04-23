@@ -95,20 +95,20 @@ final class SoundEngine: ObservableObject {
     }
 
     private func fillVinyl(left: UnsafeMutablePointer<Float>, right: UnsafeMutablePointer<Float>, count: Int) {
-        // High-frequency crackle: white noise passed through a high-pass-like filter + sparse impulses
-        var prevL: Float = 0
-        var prevR: Float = 0
-        let alpha: Float = 0.95
+        // High-pass filter + sparse crackle impulses
+        var prevInL: Float = 0, prevOutL: Float = 0
+        var prevInR: Float = 0, prevOutR: Float = 0
+        let alpha: Float = 0.92
 
         for i in 0..<count {
             let noiseL = Float.random(in: -1...1)
             let noiseR = Float.random(in: -1...1)
 
-            // High-pass filter
-            let hpL = alpha * (prevL + noiseL - (i > 0 ? left[i - 1] : 0))
-            let hpR = alpha * (prevR + noiseR - (i > 0 ? right[i - 1] : 0))
-            prevL = hpL
-            prevR = hpR
+            // First-order high-pass: y[n] = alpha * (y[n-1] + x[n] - x[n-1])
+            let hpL = alpha * (prevOutL + noiseL - prevInL)
+            let hpR = alpha * (prevOutR + noiseR - prevInR)
+            prevOutL = hpL; prevInL = noiseL
+            prevOutR = hpR; prevInR = noiseR
 
             // Sparse crackle impulses
             let crackle: Float = Float.random(in: 0...1) > 0.9995 ? Float.random(in: -0.6...0.6) : 0
