@@ -176,7 +176,13 @@ private struct SoundLibraryRow: View {
             Toggle("", isOn: Binding(
                 get: { isEnabled },
                 set: { on in
-                    if !on { engine.setActive(false, for: track.id) }
+                    if on {
+                        engine.setVolume(prefs.volume(for: track.id), for: track.id)
+                        engine.setActive(true, for: track.id)
+                        prefs.setActive(true, for: track.id)
+                    } else {
+                        engine.setActive(false, for: track.id)
+                    }
                     prefs.setSoundEnabled(on, id: track.id)
                 }
             ))
