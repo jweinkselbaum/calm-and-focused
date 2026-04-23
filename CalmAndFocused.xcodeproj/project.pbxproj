@@ -9,22 +9,43 @@
 /* Begin PBXBuildFile section */
 		090B0B55BD6DBAB3B4D219C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5BAC843DDAFC5F92709941 /* AppDelegate.swift */; };
 		252C4FFA135A260758693906 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 5A4EC128658E402E0F43039B /* Resources */; };
+		27BCE8BBF801667B97CA25AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E691F4CE7E19FABD5BEC6189 /* Assets.xcassets */; };
 		2A861305BF17B3F80B44DCF3 /* CalmAndFocusedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01AB2F4A42467F99F8E6020 /* CalmAndFocusedApp.swift */; };
+		40312759EA308B49ED0C08A1 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A00666E70C0D2532E4C455 /* ServiceManagement.framework */; };
+		46D7303F9F1885CE6026426B /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F0251E19CC2D0BA7B29B32 /* AppTheme.swift */; };
+		5CD7A4853018145FA3CC7799 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE358A647A7C282AB3D0A3E7 /* PreferencesView.swift */; };
 		6357DF0352EBD2B317EADDE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C05BF64C4CB8B27AB4FE /* ContentView.swift */; };
 		7D00E71E1B6686B4720BDCD2 /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940864F8FC0E3069C1BF91F8 /* SoundEngine.swift */; };
+		B4C0FE887F8083528708801F /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C3AC2832117EECF60B185 /* PreferencesManager.swift */; };
 		D7BAC48E672493249094F08C /* SoundTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F57B72D43DF393ED31F0E4 /* SoundTrack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1838E013F1726AE6D3F6E9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3F7C3AC2832117EECF60B185 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
+		48A00666E70C0D2532E4C455 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ServiceManagement.framework; sourceTree = "<group>"; };
 		4B5BAC843DDAFC5F92709941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C42ABF39E986513655CBAC8 /* CalmAndFocused.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalmAndFocused.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4EC128658E402E0F43039B /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = CalmAndFocused/Resources; sourceTree = SOURCE_ROOT; };
 		63E2C05BF64C4CB8B27AB4FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		64F0251E19CC2D0BA7B29B32 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		940864F8FC0E3069C1BF91F8 /* SoundEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngine.swift; sourceTree = "<group>"; };
 		B01AB2F4A42467F99F8E6020 /* CalmAndFocusedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmAndFocusedApp.swift; sourceTree = "<group>"; };
+		BE358A647A7C282AB3D0A3E7 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		C3F57B72D43DF393ED31F0E4 /* SoundTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTrack.swift; sourceTree = "<group>"; };
+		E691F4CE7E19FABD5BEC6189 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CA9C5F9E13D42DAD8845CF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40312759EA308B49ED0C08A1 /* ServiceManagement.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		57CFF6F0E0BA8231514D7C4D /* Products */ = {
@@ -39,13 +60,25 @@
 			isa = PBXGroup;
 			children = (
 				4B5BAC843DDAFC5F92709941 /* AppDelegate.swift */,
+				64F0251E19CC2D0BA7B29B32 /* AppTheme.swift */,
+				E691F4CE7E19FABD5BEC6189 /* Assets.xcassets */,
 				B01AB2F4A42467F99F8E6020 /* CalmAndFocusedApp.swift */,
 				63E2C05BF64C4CB8B27AB4FE /* ContentView.swift */,
 				1838E013F1726AE6D3F6E9EB /* Info.plist */,
+				3F7C3AC2832117EECF60B185 /* PreferencesManager.swift */,
+				BE358A647A7C282AB3D0A3E7 /* PreferencesView.swift */,
 				940864F8FC0E3069C1BF91F8 /* SoundEngine.swift */,
 				C3F57B72D43DF393ED31F0E4 /* SoundTrack.swift */,
 			);
 			path = CalmAndFocused;
+			sourceTree = "<group>";
+		};
+		EE01CFF9BC184B62CAEF298F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48A00666E70C0D2532E4C455 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F9CBF777073F2B845AE2447A = {
@@ -53,6 +86,7 @@
 			children = (
 				5A4EC128658E402E0F43039B /* Resources */,
 				8BECF9CB841C6A3E1DE5C4D6 /* CalmAndFocused */,
+				EE01CFF9BC184B62CAEF298F /* Frameworks */,
 				57CFF6F0E0BA8231514D7C4D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +100,7 @@
 			buildPhases = (
 				A75A01B3045C87F880A5DECA /* Sources */,
 				46A5AE022C17A59D12F506EF /* Resources */,
+				7CA9C5F9E13D42DAD8845CF8 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -116,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BCE8BBF801667B97CA25AA /* Assets.xcassets in Resources */,
 				252C4FFA135A260758693906 /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,8 +164,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				090B0B55BD6DBAB3B4D219C8 /* AppDelegate.swift in Sources */,
+				46D7303F9F1885CE6026426B /* AppTheme.swift in Sources */,
 				2A861305BF17B3F80B44DCF3 /* CalmAndFocusedApp.swift in Sources */,
 				6357DF0352EBD2B317EADDE9 /* ContentView.swift in Sources */,
+				B4C0FE887F8083528708801F /* PreferencesManager.swift in Sources */,
+				5CD7A4853018145FA3CC7799 /* PreferencesView.swift in Sources */,
 				7D00E71E1B6686B4720BDCD2 /* SoundEngine.swift in Sources */,
 				D7BAC48E672493249094F08C /* SoundTrack.swift in Sources */,
 			);
@@ -145,6 +184,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
 				INFOPLIST_FILE = CalmAndFocused/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -221,6 +264,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
 				INFOPLIST_FILE = CalmAndFocused/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
