@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		090B0B55BD6DBAB3B4D219C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5BAC843DDAFC5F92709941 /* AppDelegate.swift */; };
+		252C4FFA135A260758693906 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 5A4EC128658E402E0F43039B /* Resources */; };
+		2A861305BF17B3F80B44DCF3 /* CalmAndFocusedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01AB2F4A42467F99F8E6020 /* CalmAndFocusedApp.swift */; };
+		6357DF0352EBD2B317EADDE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2C05BF64C4CB8B27AB4FE /* ContentView.swift */; };
+		7D00E71E1B6686B4720BDCD2 /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940864F8FC0E3069C1BF91F8 /* SoundEngine.swift */; };
+		D7BAC48E672493249094F08C /* SoundTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F57B72D43DF393ED31F0E4 /* SoundTrack.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1838E013F1726AE6D3F6E9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4B5BAC843DDAFC5F92709941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C42ABF39E986513655CBAC8 /* CalmAndFocused.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalmAndFocused.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4EC128658E402E0F43039B /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = CalmAndFocused/Resources; sourceTree = SOURCE_ROOT; };
+		63E2C05BF64C4CB8B27AB4FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		940864F8FC0E3069C1BF91F8 /* SoundEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngine.swift; sourceTree = "<group>"; };
+		B01AB2F4A42467F99F8E6020 /* CalmAndFocusedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmAndFocusedApp.swift; sourceTree = "<group>"; };
+		C3F57B72D43DF393ED31F0E4 /* SoundTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundTrack.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		57CFF6F0E0BA8231514D7C4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C42ABF39E986513655CBAC8 /* CalmAndFocused.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BECF9CB841C6A3E1DE5C4D6 /* CalmAndFocused */ = {
+			isa = PBXGroup;
+			children = (
+				4B5BAC843DDAFC5F92709941 /* AppDelegate.swift */,
+				B01AB2F4A42467F99F8E6020 /* CalmAndFocusedApp.swift */,
+				63E2C05BF64C4CB8B27AB4FE /* ContentView.swift */,
+				1838E013F1726AE6D3F6E9EB /* Info.plist */,
+				940864F8FC0E3069C1BF91F8 /* SoundEngine.swift */,
+				C3F57B72D43DF393ED31F0E4 /* SoundTrack.swift */,
+			);
+			path = CalmAndFocused;
+			sourceTree = "<group>";
+		};
+		F9CBF777073F2B845AE2447A = {
+			isa = PBXGroup;
+			children = (
+				5A4EC128658E402E0F43039B /* Resources */,
+				8BECF9CB841C6A3E1DE5C4D6 /* CalmAndFocused */,
+				57CFF6F0E0BA8231514D7C4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E43DC31A2E33B850DDB9770A /* CalmAndFocused */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12CE4F650D797049CA0ED589 /* Build configuration list for PBXNativeTarget "CalmAndFocused" */;
+			buildPhases = (
+				A75A01B3045C87F880A5DECA /* Sources */,
+				46A5AE022C17A59D12F506EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalmAndFocused;
+			packageProductDependencies = (
+			);
+			productName = CalmAndFocused;
+			productReference = 4C42ABF39E986513655CBAC8 /* CalmAndFocused.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FF642DBB45AA146A6D4E0CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					E43DC31A2E33B850DDB9770A = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E5F763A29B7854841E4643C4 /* Build configuration list for PBXProject "CalmAndFocused" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F9CBF777073F2B845AE2447A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 57CFF6F0E0BA8231514D7C4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E43DC31A2E33B850DDB9770A /* CalmAndFocused */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46A5AE022C17A59D12F506EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				252C4FFA135A260758693906 /* Resources in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A75A01B3045C87F880A5DECA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				090B0B55BD6DBAB3B4D219C8 /* AppDelegate.swift in Sources */,
+				2A861305BF17B3F80B44DCF3 /* CalmAndFocusedApp.swift in Sources */,
+				6357DF0352EBD2B317EADDE9 /* ContentView.swift in Sources */,
+				7D00E71E1B6686B4720BDCD2 /* SoundEngine.swift in Sources */,
+				D7BAC48E672493249094F08C /* SoundTrack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0C7C29CB666A7448AE2A16FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CalmAndFocused/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jack.CalmAndFocused;
+				PRODUCT_NAME = "Calm and Focused";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		20922F2BBFC9038CC33E7097 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		58B18E642289F7654D9CF3EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CalmAndFocused/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jack.CalmAndFocused;
+				PRODUCT_NAME = "Calm and Focused";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		BCD3E7C7D0CF538AB3B9E18F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12CE4F650D797049CA0ED589 /* Build configuration list for PBXNativeTarget "CalmAndFocused" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C7C29CB666A7448AE2A16FC /* Debug */,
+				58B18E642289F7654D9CF3EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E5F763A29B7854841E4643C4 /* Build configuration list for PBXProject "CalmAndFocused" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCD3E7C7D0CF538AB3B9E18F /* Debug */,
+				20922F2BBFC9038CC33E7097 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FF642DBB45AA146A6D4E0CE /* Project object */;
+}

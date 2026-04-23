@@ -1,0 +1,31 @@
+name: CalmAndFocused
+options:
+  bundleIdPrefix: com.jack
+  deploymentTarget:
+    macOS: "13.0"
+  xcodeVersion: "15.0"
+
+targets:
+  CalmAndFocused:
+    type: application
+    platform: macOS
+    sources:
+      - path: CalmAndFocused
+        excludes:
+          - "Resources/**"
+      - path: CalmAndFocused/Resources
+        buildPhase: resources
+        type: folder
+    resources:
+      - path: CalmAndFocused/Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jack.CalmAndFocused
+        PRODUCT_NAME: Calm and Focused
+        SWIFT_VERSION: "5.9"
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        INFOPLIST_FILE: CalmAndFocused/Info.plist
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_HARDENED_RUNTIME: YES
+    scheme:
+      testTargets: []
